@@ -124,6 +124,10 @@
 /*
  * Some systems lack full limit definitions.
  */
+#if !defined(LINE_MAX)
+# define LINE_MAX 2048
+#endif
+
 #if defined(HAVE_DECL_LLONG_MAX) && !HAVE_DECL_LLONG_MAX
 # if defined(HAVE_DECL_QUAD_MAX) && HAVE_DECL_QUAD_MAX
 #  define LLONG_MAX	QUAD_MAX
